@@ -1,0 +1,8 @@
+<?php
+$sgbd_type = "mysql";
+$sgbd_server = "";
+$sgbd_port = "0";
+$sgbd_dbname = "";
+$sgbd_user = "";
+$sgbd_pass = "";
+$sgbd_prefix = "";
