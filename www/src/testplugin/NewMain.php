@@ -8,6 +8,7 @@ if (!class_exists('NewMain')) {
         public function __construct()
         {
             $main_plugin = new Main_plugin();
+            $main_plugin->loadPlugins();
             foreach ($main_plugin->getPlugins() as $value) {
                 echo $value->getName() . " : " . $value->getName() . "<br />";
             }

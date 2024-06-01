@@ -14,8 +14,14 @@ if (!class_exists('Main_plugin')) {
         {
             $this->path = "./plugins/";
             $this->all_plugin = [];
-            $all_plugin = [];
+        }
+
+        public function loadPlugins(null|string $file = null): self
+        {
             $folderPlugins = __DIR__ . "/../../../" . $this->path . "/";
+            if(!empty($file)) {
+                $folderPlugins = $file;
+            }
             if(is_dir($folderPlugins)) {
                 $ffs = scandir($folderPlugins);
                 unset($ffs[array_search('.', $ffs, true)]);
@@ -34,6 +40,7 @@ if (!class_exists('Main_plugin')) {
                     }
                 }
             }
+            return $this;
         }
     
         public function getPlugins(): null|array {
