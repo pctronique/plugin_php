@@ -1,7 +1,7 @@
 <?php
 if (!class_exists('NewMain')) {
 
-    include_once __DIR__ . '/../pctrplugin/main/PctrPlugin.php';
+    include_once __DIR__ . '/../pctrplugin/PctrPlugin.php';
 
     class NewMain
     {
