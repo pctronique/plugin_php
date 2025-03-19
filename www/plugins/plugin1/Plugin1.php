@@ -1,7 +1,7 @@
 <?php
 if (!class_exists('Plugin1')) {
 
-    include_once __DIR__ . '/../../src/plugin/main/AddPluginInterface.php';
+    include_once __DIR__ . '/../../src/testplugin/AddPluginInterface.php';
 
     class Plugin1 implements AddPluginInterface
     {

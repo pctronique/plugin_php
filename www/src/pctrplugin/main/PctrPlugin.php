@@ -1,18 +1,19 @@
 <?php
-if (!class_exists('Main_plugin')) {
-
-    include_once __DIR__ . '/AddPluginInterface.php';
+if (!class_exists('PctrPlugin')) {
+    
     include_once __DIR__ . '/Dlfcn.php';
 
-    class Main_plugin
+    class PctrPlugin
     {
     
         private null|array $all_plugin;
         private null|String $path;
+        private null|String $nameInterf;
 
-        public function __construct()
+        public function __construct(string $nameInterf)
         {
             $this->path = "./plugins/";
+            $this->nameInterf = $nameInterf;
             $this->all_plugin = [];
         }
 
@@ -31,7 +32,7 @@ if (!class_exists('Main_plugin')) {
                     if($plibobj == null) {
                         echo "Error loading the library : " . $listFile . "<br />";
                     } else {
-                        $psqr = Dlfcn::dlsym($plibobj, "AddPluginInterface");
+                        $psqr = Dlfcn::dlsym($plibobj, $this->nameInterf);
                         if ($psqr == null) {
                             echo "Error accessing the symbol : " . $listFile . "<br />";
                         } else {
