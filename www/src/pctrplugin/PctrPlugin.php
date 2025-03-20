@@ -19,7 +19,7 @@ if (!class_exists('PctrPlugin')) {
 
         public function loadPlugins(null|string $file = null): self
         {
-            $folderPlugins = __DIR__ . "/../../" . $this->path . "/";
+            $folderPlugins = $this->path . "/";
             if(!empty($file)) {
                 $folderPlugins = $file;
             }
